@@ -18,3 +18,18 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: Text('Second Screen'),
+        ),
+      ),
+    );
+  }
+}
