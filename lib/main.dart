@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(HomeScreen());
+  runApp(Application());
+}
+
+class Application extends StatelessWidget {
+  const Application({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
 }
 
 class HomeScreen extends StatelessWidget {
@@ -9,11 +20,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: TextButton(onPressed: () {}, child: Text('Next')),
-        ),
+    return Scaffold(
+      body: SafeArea(
+        child: TextButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return SecondScreen();
+                  },
+                ),
+              );
+            },
+            child: Text('Second Screen')),
       ),
     );
   }
@@ -27,7 +46,7 @@ class SecondScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Text('Second Screen'),
+          child: Text('Now SecondScreen'),
         ),
       ),
     );
