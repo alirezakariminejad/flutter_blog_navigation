@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'blog_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+
+  void navigateToBlogPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (BuildContext context) {
+        return BlogPage();
+      }),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +47,9 @@ class LoginPage extends StatelessWidget {
                     minimumSize: Size(150, 45),
                     // elevation: 1.0,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateToBlogPage(context);
+                  },
                   child: Text(
                     'ورود به حساب',
                     style: TextStyle(
