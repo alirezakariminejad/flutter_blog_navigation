@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'blog_page.dart';
+import 'password_recovery.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  void navigateToBlogPage(BuildContext context) {
+  void navigateToPage(BuildContext context, Widget page) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (BuildContext context) {
-        return BlogPage();
+        return page;
       }),
     );
   }
@@ -48,7 +49,7 @@ class LoginPage extends StatelessWidget {
                     // elevation: 1.0,
                   ),
                   onPressed: () {
-                    navigateToBlogPage(context);
+                    navigateToPage(context, BlogPage());
                   },
                   child: Text(
                     'ورود به حساب',
@@ -72,21 +73,22 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 5.0),
-                // TextButton(
-                //   style: TextButton.styleFrom(
-                //     foregroundColor: Colors.blueAccent,
-                //     backgroundColor: Colors.white,
-                //     minimumSize: Size(150, 45),
-                //   ),
-                //   onPressed: () {},
-                //   child: Text(
-                //     'ثبت نام',
-                //     style: TextStyle(
-                //       fontSize: 16.0,
-                //     ),
-                //   ),
-                // )
+                SizedBox(height: 30.0),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    minimumSize: Size(150, 45),
+                  ),
+                  onPressed: () {
+                    navigateToPage(context, PasswordRecovery());
+                  },
+                  child: Text(
+                    'بازیابی کلمه عبور',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  ),
+                )
               ],
             ),
           ),
