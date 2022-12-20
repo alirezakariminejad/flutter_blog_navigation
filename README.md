@@ -2,8 +2,6 @@
 
 A new Flutter project.
 
-<img src="https://github.com/alirezakariminejad/flutter_blog_navigation/blob/master/images/screenshot.png?raw=true" width="360" alt="app screenshot"/>
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
