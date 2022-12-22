@@ -2,7 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blog_navigation/custom_widgets/post_widget.dart';
 
 class BlogPage extends StatelessWidget {
-  const BlogPage({super.key});
+  BlogPage({super.key});
+  final List<Widget> listBlogPosts = [
+    getPostItem(
+        postImage: 'img1.jpg',
+        postTitle: 'سیگنال خرید bitcoin در تاریخ 1401/09/27',
+        postBuy: '12.665',
+        postSell: '11.230'),
+    getPostItem(
+        postImage: 'img2.jpg',
+        postTitle: 'سیگنال خرید bitcoin در تاریخ 1401/09/26',
+        postBuy: '13.665',
+        postSell: '13.230'),
+    getPostItem(
+        postImage: 'img3.jpg',
+        postTitle: 'سیگنال خرید bitcoin در تاریخ 1401/09/25',
+        postBuy: '15.665',
+        postSell: '13.230'),
+    getPostItem(
+        postImage: 'img4.jpg',
+        postTitle: 'سیگنال خرید bitcoin در تاریخ 1401/09/24',
+        postBuy: '10.665',
+        postSell: '9.250'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +56,7 @@ class BlogPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  getPostItem('img1.jpg'),
-                  getPostItem('img2.jpg'),
-                  getPostItem('img3.jpg'),
-                  getPostItem('img4.jpg'),
+                  ...listBlogPosts,
                   // close button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
