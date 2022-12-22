@@ -236,7 +236,21 @@ class BlogPage extends StatelessWidget {
                   ),
                   SizedBox(height: 5.0),
                   Divider(color: Colors.black38),
-                  SizedBox(height: 5.0),
+                  SizedBox(height: 15.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('بازگشت به صفحه ورود'),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
