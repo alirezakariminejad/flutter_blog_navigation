@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget getPostItem(String postImage) {
+Widget getPostItem({required String postImage, required String postTitle, required String postBuy, required String postSell}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.end,
     children: [
@@ -12,7 +12,7 @@ Widget getPostItem(String postImage) {
       ),
       SizedBox(height: 10.0),
       Text(
-        'سیگنال خرید bitcoin در تاریخ 1401/09/27',
+        '$postTitle',
         textDirection: TextDirection.rtl,
         textAlign: TextAlign.right,
         style: TextStyle(
@@ -27,7 +27,7 @@ Widget getPostItem(String postImage) {
           Row(
             children: [
               Text(
-                'فروش : 12.985',
+                'فروش : $postSell',
                 style: TextStyle(color: Colors.red),
               ),
               Icon(
@@ -40,7 +40,7 @@ Widget getPostItem(String postImage) {
           Row(
             children: [
               Text(
-                'خرید : 13.245',
+                'خرید : $postBuy',
                 style: TextStyle(color: Colors.green),
               ),
               Icon(
